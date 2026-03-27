@@ -1,0 +1,77 @@
+/* カレンダー全体のフォントサイズアップ */
+.react-calendar {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: inherit;
+}
+
+/* 曜日の行をハッキリさせる */
+.react-calendar__month-view__weekdays {
+  text-transform: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding-bottom: 10px;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  color: #64748b; /* slate-500 */
+}
+
+/* 日付のマス（タイル）を巨大化 */
+.react-calendar__tile {
+  min-height: 120px; /* ここを大きくして複数日程に耐える */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* 左寄せ */
+  justify-content: flex-start !important;
+  padding: 10px !important;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+/* ホバー時の挙動 */
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #f1f5f9 !important; /* slate-100 */
+}
+
+.dark .react-calendar__tile:enabled:hover,
+.dark .react-calendar__tile:enabled:focus {
+  background-color: #1e293b !important; /* slate-800 */
+}
+
+/* 今日の日付の強調 */
+.react-calendar__tile--now {
+  background: #eff6ff !important; /* blue-50 */
+  color: #2563eb !important; /* blue-600 */
+  font-weight: bold;
+}
+
+.dark .react-calendar__tile--now {
+  background: #1e3a8a !important; /* blue-900/40 */
+  color: #60a5fa !important; /* blue-400 */
+}
+
+/* 選択中の日付 */
+.react-calendar__tile--active {
+  background: #3b82f6 !important; /* blue-500 */
+  color: white !important;
+}
+
+/* 企業名ラベルのスタイルを上書き */
+.calendar-label {
+  width: 100%;
+  font-size: 10px;
+  font-weight: 800; /* 太くして読みやすく */
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 少しだけ影をつけて背景から浮かせる */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
+}

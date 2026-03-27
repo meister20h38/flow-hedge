@@ -1,8 +1,37 @@
-# 環境変数
+# --- Security (最重要) ---
 .env
+.env*
+*.pem
 
-# Go/Next.jsのビルド生成物
+# --- Frontend (Next.js / Node.js) ---
+# ディレクトリ名の指定なしで書けば、全階層の node_modules が対象になります
 node_modules/
 .next/
+out/
+build/
+.vercel
+.tsbuildinfo
+next-env.d.ts
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- Backend (Go) ---
 bin/
 *.exe
+
+# Goのビルド済みバイナリ（もし main 等の名前で出力するなら追加）
+main
+app-main
+
+# --- Docker & DB ---
+# DBのデータ永続化ディレクトリ（プッシュすると巨大なバイナリが上がるため）
+db-data/
+postgres-data/
+
+# --- OS / Misc ---
+.DS_Store
+.idea/
+.vscode/
+*.swp

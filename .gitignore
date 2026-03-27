@@ -1,0 +1,8 @@
+# 環境変数
+.env
+
+# Go/Next.jsのビルド生成物
+node_modules/
+.next/
+bin/
+*.exe
